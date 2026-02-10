@@ -1,0 +1,1565 @@
+===========================================================================
+         ________    _________   _______       __     _________            
+        |        |\ |        |\ |       \\    |  |\  /         \\          
+        |    ____|| |    ____|| |    __  ||   |__|| |    ___    ||         
+        |   |\___\| |   |\___\| |   |\_| ||    \_\| |   //  \   ||         
+        |   ||__    |   ||__    |   ||_| ||   |  |\ |  ||    |  ||         
+        |       |\  |       |\  |         \\  |  || |  ||    |  ||         
+        |    ___||  |    ___||  |    ___   || |  || |  ||    |  ||         
+        |   |\__\|  |   |\__\|  |   |\__|  || |  || |  ||    |  ||         
+        |   ||      |   ||___   |   ||__|  || |  || |   \\__/   ||         
+        |   ||      |        |\ |          || |  || |           ||         
+        |___||      |________|| |_________//  |__||  \_________//          
+                                                                           
+      F I N I T E   E L E M E N T S   F O R   B I O M E C H A N I C S      
+                                                                           
+  version 4.10.0
+  FEBio is a registered trademark.                                         
+  copyright (c) 2006-2025 - All rights reserved                            
+                                                                           
+===========================================================================
+
+
+
+
+
+ FILES USED
+===========================================================================
+	Input file : C:\Users\Pedro\Documents\VS code\.venv\Febio_optimizer\Simple Shear Cube_120525_modelrun.feb
+	Plot file  : C:\Users\Pedro\Documents\VS code\.venv\Febio_optimizer\Simple Shear Cube_120525_modelrun.xplt
+	Log file   : C:\Users\Pedro\Documents\VS code\.venv\Febio_optimizer\Simple Shear Cube_120525_modelrun.log
+
+
+ MESH INFO
+===========================================================================
+	Number of materials ............................ : 1
+	Number of domains .............................. : 1
+	Number of nodes ................................ : 1331
+	Number of solid elements ....................... : 1000
+
+
+ MODULE
+===========================================================================
+	Module type ....................................... : solid
+
+
+ CONTROL DATA
+===========================================================================
+	analysis .......................................... : STATIC (0)
+	time_steps ........................................ : 15000
+	step_size ......................................... : 0.0001
+	plot_zero_state ................................... : no (0)
+	plot_range ........................................ : 0,-1
+	plot_level ........................................ : PLOT_MAJOR_ITRS (1)
+	output_level ...................................... : OUTPUT_MAJOR_ITRS (1)
+	plot_stride ....................................... : 1
+	output_stride ..................................... : 1
+	adaptor_re_solve .................................. : yes (1)
+	Auto time stepper activated ....................... : yes
+	  max_retries ..................................... : 5
+	  opt_iter ........................................ : 11
+	  dtmin ........................................... : 0
+	  dtmax ........................................... : 0.1
+	  aggressiveness .................................. : 0
+	  cutback ......................................... : 0.5
+	  dtforce ......................................... : no (0)
+ SOLVER PARAMETERS
+===========================================================================
+	symmetric_stiffness ............................... : preferred (3)
+	equation_scheme ................................... : staggered (0)
+	equation_order .................................... : default (0)
+	optimize_bw ....................................... : no (0)
+	lstol ............................................. : 0.9
+	lsmin ............................................. : 0.01
+	lsiter ............................................ : 5
+	ls_check_jacobians ................................ : no (0)
+	max_refs .......................................... : 15
+	check_zero_diagonal ............................... : no (0)
+	zero_diagonal_tol ................................. : 0
+	force_partition ................................... : 0
+	reform_each_time_step ............................. : yes (1)
+	reform_augment .................................... : no (0)
+	diverge_reform .................................... : yes (1)
+	min_residual ...................................... : 1e-20
+	max_residual ...................................... : 0
+	dtol .............................................. : 0.001
+	etol .............................................. : 0.01
+	rtol .............................................. : 0
+	rhoi .............................................. : -2
+	alpha ............................................. : 1
+	beta .............................................. : 0.25
+	gamma ............................................. : 0.5
+	logSolve .......................................... : no (0)
+	arc_length ........................................ : 0
+	arc_length_scale .................................. : 0
+
+
+
+
+
+
+ MATERIAL DATA
+===========================================================================
+  1 - Material3 (type: Ogden)
+	density ........................................... : 1
+	k ................................................. : 1000
+	pressure_model .................................... : default (0)
+	c1 ................................................ : 10
+	c2 ................................................ : 0
+	c3 ................................................ : 0
+	c4 ................................................ : 0
+	c5 ................................................ : 0
+	c6 ................................................ : 0
+	m1 ................................................ : 1
+	m2 ................................................ : -1
+	m3 ................................................ : 2
+	m4 ................................................ : 1
+	m5 ................................................ : 1
+	m6 ................................................ : 1
+
+
+ BOUNDARY CONDITION DATA
+===========================================================================
+  1 -  Type: zero displacement
+	x_dof ............................................. : yes (1)
+	y_dof ............................................. : yes (1)
+	z_dof ............................................. : yes (1)
+---------------------------------------------------------------------------
+  2 -  Type: zero displacement
+	x_dof ............................................. : no (0)
+	y_dof ............................................. : yes (1)
+	z_dof ............................................. : no (0)
+---------------------------------------------------------------------------
+  3 -  Type: zero displacement
+	x_dof ............................................. : no (0)
+	y_dof ............................................. : no (0)
+	z_dof ............................................. : yes (1)
+---------------------------------------------------------------------------
+  4 -  Type: prescribed displacement
+	dof ............................................... : 0
+	value ............................................. : 1.5
+	relative .......................................... : no (0)
+
+
+ LOAD CONTROLLER DATA
+===========================================================================
+load controller   1 - LC1 (type: loadcurve)
+	interpolate ....................................... : LINEAR (0)
+	extend ............................................ : CONSTANT (0)
+	points ............................................ : (can't display value)
+
+
+ OUTPUT DATA
+===========================================================================
+ LINEAR SOLVER DATA
+===========================================================================
+	Default linear solver ............................. : pardiso
+
+
+Data Record #1
+===========================================================================
+Step = 0
+Time = 0
+Data = sx
+File = C:\Users\Pedro\Documents\VS code\.venv\Febio_optimizer\element_stress_log.txt
+
+Data Record #2
+===========================================================================
+Step = 0
+Time = 0
+Data = Rx
+File = C:\Users\Pedro\Documents\VS code\.venv\Febio_optimizer\node_rx force.txt
+
+ *************************************************************************
+ * Selecting linear solver pardiso                                       *
+ *************************************************************************
+
+ *************************************************************************
+ * Setting matrix format to: symmetric                                   *
+ *************************************************************************
+
+===== beginning time step 1 : 0.0001 =====
+
+
+Reforming stiffness matrix: reformation #1
+
+===== reforming stiffness matrix:
+	Nr of equations ........................... : 3289
+	Nr of nonzeroes in stiffness matrix ....... : 108145
+ 1
+ Nonlinear solution status: time= 0.0001
+	stiffness updates             = 0
+	right hand side evaluations   = 2
+	stiffness matrix reformations = 1
+	step from line search         = 1.000000
+	convergence norms :     INITIAL         CURRENT         REQUIRED
+	   residual            5.343750e-05    4.079555e-12    0.000000e+00 
+	   energy              1.037510e-05    8.828162e-15    1.037510e-07 
+	   displacement        8.005218e-06    8.005218e-06    8.005218e-12 
+ 2
+ Nonlinear solution status: time= 0.0001
+	stiffness updates             = 1
+	right hand side evaluations   = 3
+	stiffness matrix reformations = 1
+	step from line search         = 1.000000
+	convergence norms :     INITIAL         CURRENT         REQUIRED
+	   residual            5.343750e-05    2.850236e-21    0.000000e+00 
+	   energy              1.037510e-05    1.191871e-21    1.037510e-07 
+	   displacement        8.005218e-06    1.689997e-17    8.005218e-12 
+
+convergence summary
+    number of iterations   : 2
+    number of reformations : 1
+
+------- converged at time : 0.0001
+
+
+Data Record #1
+===========================================================================
+Step = 1
+Time = 0.0001
+Data = sx
+File = C:\Users\Pedro\Documents\VS code\.venv\Febio_optimizer\element_stress_log.txt
+
+Data Record #2
+===========================================================================
+Step = 1
+Time = 0.0001
+Data = Rx
+File = C:\Users\Pedro\Documents\VS code\.venv\Febio_optimizer\node_rx force.txt
+
+AUTO STEPPER: increasing time step, dt = 0.0005
+
+
+===== beginning time step 2 : 0.0006 =====
+
+
+Reforming stiffness matrix: reformation #1
+
+ 1
+ Nonlinear solution status: time= 0.0006
+	stiffness updates             = 0
+	right hand side evaluations   = 2
+	stiffness matrix reformations = 1
+	step from line search         = 1.000000
+	convergence norms :     INITIAL         CURRENT         REQUIRED
+	   residual            1.335938e-03    2.549722e-09    0.000000e+00 
+	   energy              2.593774e-04    5.463627e-12    2.593774e-06 
+	   displacement        2.001304e-04    2.001304e-04    2.001304e-10 
+ 2
+ Nonlinear solution status: time= 0.0006
+	stiffness updates             = 1
+	right hand side evaluations   = 3
+	stiffness matrix reformations = 1
+	step from line search         = 1.000000
+	convergence norms :     INITIAL         CURRENT         REQUIRED
+	   residual            1.335938e-03    2.144698e-17    0.000000e+00 
+	   energy              2.593774e-04    4.703159e-18    2.593774e-06 
+	   displacement        2.001304e-04    1.056309e-14    2.001304e-10 
+
+convergence summary
+    number of iterations   : 2
+    number of reformations : 1
+
+------- converged at time : 0.0006
+
+
+Data Record #1
+===========================================================================
+Step = 2
+Time = 0.0006
+Data = sx
+File = C:\Users\Pedro\Documents\VS code\.venv\Febio_optimizer\element_stress_log.txt
+
+Data Record #2
+===========================================================================
+Step = 2
+Time = 0.0006
+Data = Rx
+File = C:\Users\Pedro\Documents\VS code\.venv\Febio_optimizer\node_rx force.txt
+
+AUTO STEPPER: increasing time step, dt = 0.0025
+
+
+===== beginning time step 3 : 0.0031 =====
+
+
+Reforming stiffness matrix: reformation #1
+
+ 1
+ Nonlinear solution status: time= 0.0031
+	stiffness updates             = 0
+	right hand side evaluations   = 2
+	stiffness matrix reformations = 1
+	step from line search         = 1.000000
+	convergence norms :     INITIAL         CURRENT         REQUIRED
+	   residual            3.339858e-02    1.593577e-06    0.000000e+00 
+	   energy              6.484436e-03    3.409176e-09    6.484436e-05 
+	   displacement        5.003261e-03    5.003261e-03    5.003261e-09 
+ 2
+ Nonlinear solution status: time= 0.0031
+	stiffness updates             = 1
+	right hand side evaluations   = 3
+	stiffness matrix reformations = 1
+	step from line search         = 1.000000
+	convergence norms :     INITIAL         CURRENT         REQUIRED
+	   residual            3.339858e-02    3.361332e-13    0.000000e+00 
+	   energy              6.484436e-03    7.311140e-14    6.484436e-05 
+	   displacement        5.003261e-03    6.613152e-12    5.003259e-09 
+
+convergence summary
+    number of iterations   : 2
+    number of reformations : 1
+
+------- converged at time : 0.0031
+
+
+Data Record #1
+===========================================================================
+Step = 3
+Time = 0.0031
+Data = sx
+File = C:\Users\Pedro\Documents\VS code\.venv\Febio_optimizer\element_stress_log.txt
+
+Data Record #2
+===========================================================================
+Step = 3
+Time = 0.0031
+Data = Rx
+File = C:\Users\Pedro\Documents\VS code\.venv\Febio_optimizer\node_rx force.txt
+
+AUTO STEPPER: increasing time step, dt = 0.0125
+
+
+===== beginning time step 4 : 0.0156 =====
+
+
+Reforming stiffness matrix: reformation #1
+
+ 1
+ Nonlinear solution status: time= 0.0156
+	stiffness updates             = 0
+	right hand side evaluations   = 2
+	stiffness matrix reformations = 1
+	step from line search         = 1.000000
+	convergence norms :     INITIAL         CURRENT         REQUIRED
+	   residual            8.350561e-01    9.959909e-04    0.000000e+00 
+	   energy              1.621110e-01    2.130041e-06    1.621110e-03 
+	   displacement        1.250815e-01    1.250815e-01    1.250815e-07 
+ 2
+ Nonlinear solution status: time= 0.0156
+	stiffness updates             = 1
+	right hand side evaluations   = 3
+	stiffness matrix reformations = 1
+	step from line search         = 1.000000
+	convergence norms :     INITIAL         CURRENT         REQUIRED
+	   residual            8.350561e-01    5.658748e-09    0.000000e+00 
+	   energy              1.621110e-01    1.142791e-09    1.621110e-03 
+	   displacement        1.250815e-01    4.308595e-09    1.250804e-07 
+
+convergence summary
+    number of iterations   : 2
+    number of reformations : 1
+
+------- converged at time : 0.0156
+
+
+Data Record #1
+===========================================================================
+Step = 4
+Time = 0.0156
+Data = sx
+File = C:\Users\Pedro\Documents\VS code\.venv\Febio_optimizer\element_stress_log.txt
+
+Data Record #2
+===========================================================================
+Step = 4
+Time = 0.0156
+Data = Rx
+File = C:\Users\Pedro\Documents\VS code\.venv\Febio_optimizer\node_rx force.txt
+
+AUTO STEPPER: increasing time step, dt = 0.03
+
+
+===== beginning time step 5 : 0.0456 =====
+
+
+Reforming stiffness matrix: reformation #1
+
+ 1
+ Nonlinear solution status: time= 0.0456
+	stiffness updates             = 0
+	right hand side evaluations   = 2
+	stiffness matrix reformations = 1
+	step from line search         = 1.000000
+	convergence norms :     INITIAL         CURRENT         REQUIRED
+	   residual            4.823242e+00    3.306012e-02    0.000000e+00 
+	   energy              9.337766e-01    6.991140e-05    9.337766e-03 
+	   displacement        7.204722e-01    7.204722e-01    7.204722e-07 
+ 2
+ Nonlinear solution status: time= 0.0456
+	stiffness updates             = 1
+	right hand side evaluations   = 3
+	stiffness matrix reformations = 1
+	step from line search         = 1.000000
+	convergence norms :     INITIAL         CURRENT         REQUIRED
+	   residual            4.823242e+00    1.469839e-06    0.000000e+00 
+	   energy              9.337766e-01    2.194500e-07    9.337766e-03 
+	   displacement        7.204722e-01    1.719823e-07    7.204341e-07 
+
+convergence summary
+    number of iterations   : 2
+    number of reformations : 1
+
+------- converged at time : 0.0456
+
+
+Data Record #1
+===========================================================================
+Step = 5
+Time = 0.0456
+Data = sx
+File = C:\Users\Pedro\Documents\VS code\.venv\Febio_optimizer\element_stress_log.txt
+
+Data Record #2
+===========================================================================
+Step = 5
+Time = 0.0456
+Data = Rx
+File = C:\Users\Pedro\Documents\VS code\.venv\Febio_optimizer\node_rx force.txt
+
+AUTO STEPPER: increasing time step, dt = 0.044
+
+
+===== beginning time step 6 : 0.0896 =====
+
+
+Reforming stiffness matrix: reformation #1
+
+ 1
+ Nonlinear solution status: time= 0.0896
+	stiffness updates             = 0
+	right hand side evaluations   = 2
+	stiffness matrix reformations = 1
+	step from line search         = 1.000000
+	convergence norms :     INITIAL         CURRENT         REQUIRED
+	   residual            1.059997e+01    1.536175e-01    0.000000e+00 
+	   energy              2.008956e+00    3.183651e-04    2.008956e-02 
+	   displacement        1.549863e+00    1.549863e+00    1.549863e-06 
+ 2
+ Nonlinear solution status: time= 0.0896
+	stiffness updates             = 1
+	right hand side evaluations   = 3
+	stiffness matrix reformations = 1
+	step from line search         = 1.000000
+	convergence norms :     INITIAL         CURRENT         REQUIRED
+	   residual            1.059997e+01    2.025212e-05    0.000000e+00 
+	   energy              2.008956e+00    2.215382e-06    2.008956e-02 
+	   displacement        1.549863e+00    9.893809e-07    1.549685e-06 
+
+convergence summary
+    number of iterations   : 2
+    number of reformations : 1
+
+------- converged at time : 0.0896
+
+
+Data Record #1
+===========================================================================
+Step = 6
+Time = 0.0896
+Data = sx
+File = C:\Users\Pedro\Documents\VS code\.venv\Febio_optimizer\element_stress_log.txt
+
+Data Record #2
+===========================================================================
+Step = 6
+Time = 0.0896
+Data = Rx
+File = C:\Users\Pedro\Documents\VS code\.venv\Febio_optimizer\node_rx force.txt
+
+AUTO STEPPER: increasing time step, dt = 0.0552
+
+
+===== beginning time step 7 : 0.1448 =====
+
+
+Reforming stiffness matrix: reformation #1
+
+ 1
+ Nonlinear solution status: time= 0.1448
+	stiffness updates             = 0
+	right hand side evaluations   = 2
+	stiffness matrix reformations = 1
+	step from line search         = 1.000000
+	convergence norms :     INITIAL         CURRENT         REQUIRED
+	   residual            1.782822e+01    3.831791e-01    0.000000e+00 
+	   energy              3.163173e+00    7.774131e-04    3.163173e-02 
+	   displacement        2.439426e+00    2.439426e+00    2.439426e-06 
+ 2
+ Nonlinear solution status: time= 0.1448
+	stiffness updates             = 1
+	right hand side evaluations   = 3
+	stiffness matrix reformations = 1
+	step from line search         = 1.000000
+	convergence norms :     INITIAL         CURRENT         REQUIRED
+	   residual            1.782822e+01    1.040603e-04    0.000000e+00 
+	   energy              3.163173e+00    8.813948e-06    3.163173e-02 
+	   displacement        2.439426e+00    2.994495e-06    2.438979e-06 
+ 3
+ Nonlinear solution status: time= 0.1448
+	stiffness updates             = 2
+	right hand side evaluations   = 4
+	stiffness matrix reformations = 1
+	step from line search         = 1.000000
+	convergence norms :     INITIAL         CURRENT         REQUIRED
+	   residual            1.782822e+01    1.029854e-05    0.000000e+00 
+	   energy              3.163173e+00    4.216487e-08    3.163173e-02 
+	   displacement        2.439426e+00    1.316973e-06    2.439394e-06 
+
+convergence summary
+    number of iterations   : 3
+    number of reformations : 1
+
+------- converged at time : 0.1448
+
+
+Data Record #1
+===========================================================================
+Step = 7
+Time = 0.1448
+Data = sx
+File = C:\Users\Pedro\Documents\VS code\.venv\Febio_optimizer\element_stress_log.txt
+
+Data Record #2
+===========================================================================
+Step = 7
+Time = 0.1448
+Data = Rx
+File = C:\Users\Pedro\Documents\VS code\.venv\Febio_optimizer\node_rx force.txt
+
+AUTO STEPPER: increasing time step, dt = 0.06416
+
+
+===== beginning time step 8 : 0.20896 =====
+
+
+Reforming stiffness matrix: reformation #1
+
+ 1
+ Nonlinear solution status: time= 0.20896
+	stiffness updates             = 0
+	right hand side evaluations   = 2
+	stiffness matrix reformations = 1
+	step from line search         = 1.000000
+	convergence norms :     INITIAL         CURRENT         REQUIRED
+	   residual            2.747006e+01    6.904109e-01    0.000000e+00 
+	   energy              4.276066e+00    1.353127e-03    4.276066e-02 
+	   displacement        3.295299e+00    3.295299e+00    3.295299e-06 
+ 2
+ Nonlinear solution status: time= 0.20896
+	stiffness updates             = 1
+	right hand side evaluations   = 3
+	stiffness matrix reformations = 1
+	step from line search         = 1.000000
+	convergence norms :     INITIAL         CURRENT         REQUIRED
+	   residual            2.747006e+01    3.049440e-04    0.000000e+00 
+	   energy              4.276066e+00    2.140041e-05    4.276066e-02 
+	   displacement        3.295299e+00    6.273108e-06    3.294500e-06 
+ 3
+ Nonlinear solution status: time= 0.20896
+	stiffness updates             = 2
+	right hand side evaluations   = 4
+	stiffness matrix reformations = 1
+	step from line search         = 1.000000
+	convergence norms :     INITIAL         CURRENT         REQUIRED
+	   residual            2.747006e+01    3.311018e-05    0.000000e+00 
+	   energy              4.276066e+00    1.338614e-07    4.276066e-02 
+	   displacement        3.295299e+00    3.154414e-06    3.295237e-06 
+
+convergence summary
+    number of iterations   : 3
+    number of reformations : 1
+
+------- converged at time : 0.20896
+
+
+Data Record #1
+===========================================================================
+Step = 8
+Time = 0.20896
+Data = sx
+File = C:\Users\Pedro\Documents\VS code\.venv\Febio_optimizer\element_stress_log.txt
+
+Data Record #2
+===========================================================================
+Step = 8
+Time = 0.20896
+Data = Rx
+File = C:\Users\Pedro\Documents\VS code\.venv\Febio_optimizer\node_rx force.txt
+
+AUTO STEPPER: increasing time step, dt = 0.071328
+
+
+===== beginning time step 9 : 0.280288 =====
+
+
+Reforming stiffness matrix: reformation #1
+
+ 1
+ Nonlinear solution status: time= 0.280288
+	stiffness updates             = 0
+	right hand side evaluations   = 2
+	stiffness matrix reformations = 1
+	step from line search         = 1.000000
+	convergence norms :     INITIAL         CURRENT         REQUIRED
+	   residual            4.126786e+01    1.053091e+00    0.000000e+00 
+	   energy              5.291765e+00    2.001115e-03    5.291765e-02 
+	   displacement        4.072662e+00    4.072662e+00    4.072662e-06 
+ 2
+ Nonlinear solution status: time= 0.280288
+	stiffness updates             = 1
+	right hand side evaluations   = 3
+	stiffness matrix reformations = 1
+	step from line search         = 1.000000
+	convergence norms :     INITIAL         CURRENT         REQUIRED
+	   residual            4.126786e+01    6.722933e-04    0.000000e+00 
+	   energy              5.291765e+00    4.063940e-05    5.291765e-02 
+	   displacement        4.072662e+00    1.084312e-05    4.071437e-06 
+ 3
+ Nonlinear solution status: time= 0.280288
+	stiffness updates             = 2
+	right hand side evaluations   = 4
+	stiffness matrix reformations = 1
+	step from line search         = 1.000000
+	convergence norms :     INITIAL         CURRENT         REQUIRED
+	   residual            4.126786e+01    7.619119e-05    0.000000e+00 
+	   energy              5.291765e+00    3.066680e-07    5.291765e-02 
+	   displacement        4.072662e+00    5.885037e-06    4.072545e-06 
+ 4
+ Nonlinear solution status: time= 0.280288
+	stiffness updates             = 3
+	right hand side evaluations   = 5
+	stiffness matrix reformations = 1
+	step from line search         = 1.000000
+	convergence norms :     INITIAL         CURRENT         REQUIRED
+	   residual            4.126786e+01    1.285086e-07    0.000000e+00 
+	   energy              5.291765e+00    1.603284e-09    5.291765e-02 
+	   displacement        4.072662e+00    5.994425e-09    4.072600e-06 
+
+convergence summary
+    number of iterations   : 4
+    number of reformations : 1
+
+------- converged at time : 0.280288
+
+
+Data Record #1
+===========================================================================
+Step = 9
+Time = 0.280288
+Data = sx
+File = C:\Users\Pedro\Documents\VS code\.venv\Febio_optimizer\element_stress_log.txt
+
+Data Record #2
+===========================================================================
+Step = 9
+Time = 0.280288
+Data = Rx
+File = C:\Users\Pedro\Documents\VS code\.venv\Febio_optimizer\node_rx force.txt
+
+AUTO STEPPER: increasing time step, dt = 0.0770624
+
+
+===== beginning time step 10 : 0.35735 =====
+
+
+Reforming stiffness matrix: reformation #1
+
+ 1
+ Nonlinear solution status: time= 0.35735
+	stiffness updates             = 0
+	right hand side evaluations   = 2
+	stiffness matrix reformations = 1
+	step from line search         = 1.000000
+	convergence norms :     INITIAL         CURRENT         REQUIRED
+	   residual            6.131195e+01    1.430398e+00    0.000000e+00 
+	   energy              6.189042e+00    2.631898e-03    6.189042e-02 
+	   displacement        4.753644e+00    4.753644e+00    4.753644e-06 
+ 2
+ Nonlinear solution status: time= 0.35735
+	stiffness updates             = 1
+	right hand side evaluations   = 3
+	stiffness matrix reformations = 1
+	step from line search         = 1.000000
+	convergence norms :     INITIAL         CURRENT         REQUIRED
+	   residual            6.131195e+01    1.216926e-03    0.000000e+00 
+	   energy              6.189042e+00    6.522029e-05    6.189042e-02 
+	   displacement        4.753644e+00    1.639345e-05    4.751954e-06 
+ 3
+ Nonlinear solution status: time= 0.35735
+	stiffness updates             = 2
+	right hand side evaluations   = 4
+	stiffness matrix reformations = 1
+	step from line search         = 1.000000
+	convergence norms :     INITIAL         CURRENT         REQUIRED
+	   residual            6.131195e+01    1.394540e-04    0.000000e+00 
+	   energy              6.189042e+00    5.591134e-07    6.189042e-02 
+	   displacement        4.753644e+00    9.248713e-06    4.753442e-06 
+ 4
+ Nonlinear solution status: time= 0.35735
+	stiffness updates             = 3
+	right hand side evaluations   = 5
+	stiffness matrix reformations = 1
+	step from line search         = 1.000000
+	convergence norms :     INITIAL         CURRENT         REQUIRED
+	   residual            6.131195e+01    3.171020e-07    0.000000e+00 
+	   energy              6.189042e+00    3.328434e-09    6.189042e-02 
+	   displacement        4.753644e+00    1.253413e-08    4.753530e-06 
+
+convergence summary
+    number of iterations   : 4
+    number of reformations : 1
+
+------- converged at time : 0.35735
+
+
+Data Record #1
+===========================================================================
+Step = 10
+Time = 0.3573504
+Data = sx
+File = C:\Users\Pedro\Documents\VS code\.venv\Febio_optimizer\element_stress_log.txt
+
+Data Record #2
+===========================================================================
+Step = 10
+Time = 0.3573504
+Data = Rx
+File = C:\Users\Pedro\Documents\VS code\.venv\Febio_optimizer\node_rx force.txt
+
+AUTO STEPPER: increasing time step, dt = 0.0816499
+
+
+===== beginning time step 11 : 0.439 =====
+
+
+Reforming stiffness matrix: reformation #1
+
+ 1
+ Nonlinear solution status: time= 0.439
+	stiffness updates             = 0
+	right hand side evaluations   = 2
+	stiffness matrix reformations = 1
+	step from line search         = 1.000000
+	convergence norms :     INITIAL         CURRENT         REQUIRED
+	   residual            8.956818e+01    1.796093e+00    0.000000e+00 
+	   energy              6.967213e+00    3.189713e-03    6.967213e-02 
+	   displacement        5.336215e+00    5.336215e+00    5.336215e-06 
+ 2
+ Nonlinear solution status: time= 0.439
+	stiffness updates             = 1
+	right hand side evaluations   = 3
+	stiffness matrix reformations = 1
+	step from line search         = 1.000000
+	convergence norms :     INITIAL         CURRENT         REQUIRED
+	   residual            8.956818e+01    1.896136e-03    0.000000e+00 
+	   energy              6.967213e+00    9.272177e-05    6.967213e-02 
+	   displacement        5.336215e+00    2.235991e-05    5.334067e-06 
+ 3
+ Nonlinear solution status: time= 0.439
+	stiffness updates             = 2
+	right hand side evaluations   = 4
+	stiffness matrix reformations = 1
+	step from line search         = 1.000000
+	convergence norms :     INITIAL         CURRENT         REQUIRED
+	   residual            8.956818e+01    2.188316e-04    0.000000e+00 
+	   energy              6.967213e+00    8.739996e-07    6.967213e-02 
+	   displacement        5.336215e+00    1.293665e-05    5.335921e-06 
+ 4
+ Nonlinear solution status: time= 0.439
+	stiffness updates             = 3
+	right hand side evaluations   = 5
+	stiffness matrix reformations = 1
+	step from line search         = 1.000000
+	convergence norms :     INITIAL         CURRENT         REQUIRED
+	   residual            8.956818e+01    6.184930e-07    0.000000e+00 
+	   energy              6.967213e+00    5.701464e-09    6.967213e-02 
+	   displacement        5.336215e+00    2.174889e-08    5.336046e-06 
+
+convergence summary
+    number of iterations   : 4
+    number of reformations : 1
+
+------- converged at time : 0.439
+
+
+Data Record #1
+===========================================================================
+Step = 11
+Time = 0.43900032
+Data = sx
+File = C:\Users\Pedro\Documents\VS code\.venv\Febio_optimizer\element_stress_log.txt
+
+Data Record #2
+===========================================================================
+Step = 11
+Time = 0.43900032
+Data = Rx
+File = C:\Users\Pedro\Documents\VS code\.venv\Febio_optimizer\node_rx force.txt
+
+AUTO STEPPER: increasing time step, dt = 0.0853199
+
+
+===== beginning time step 12 : 0.52432 =====
+
+
+Reforming stiffness matrix: reformation #1
+
+ 1
+ Nonlinear solution status: time= 0.52432
+	stiffness updates             = 0
+	right hand side evaluations   = 2
+	stiffness matrix reformations = 1
+	step from line search         = 1.000000
+	convergence norms :     INITIAL         CURRENT         REQUIRED
+	   residual            1.277284e+02    2.131141e+00    0.000000e+00 
+	   energy              7.635526e+00    3.644029e-03    7.635526e-02 
+	   displacement        5.826352e+00    5.826352e+00    5.826352e-06 
+ 2
+ Nonlinear solution status: time= 0.52432
+	stiffness updates             = 1
+	right hand side evaluations   = 3
+	stiffness matrix reformations = 1
+	step from line search         = 1.000000
+	convergence norms :     INITIAL         CURRENT         REQUIRED
+	   residual            1.277284e+02    2.664260e-03    0.000000e+00 
+	   energy              7.635526e+00    1.211545e-04    7.635526e-02 
+	   displacement        5.826352e+00    2.838360e-05    5.823765e-06 
+ 3
+ Nonlinear solution status: time= 0.52432
+	stiffness updates             = 2
+	right hand side evaluations   = 4
+	stiffness matrix reformations = 1
+	step from line search         = 1.000000
+	convergence norms :     INITIAL         CURRENT         REQUIRED
+	   residual            1.277284e+02    3.076215e-04    0.000000e+00 
+	   energy              7.635526e+00    1.223931e-06    7.635526e-02 
+	   displacement        5.826352e+00    1.665119e-05    5.825956e-06 
+ 4
+ Nonlinear solution status: time= 0.52432
+	stiffness updates             = 3
+	right hand side evaluations   = 5
+	stiffness matrix reformations = 1
+	step from line search         = 1.000000
+	convergence norms :     INITIAL         CURRENT         REQUIRED
+	   residual            1.277284e+02    1.025470e-06    0.000000e+00 
+	   energy              7.635526e+00    8.508717e-09    7.635526e-02 
+	   displacement        5.826352e+00    3.304866e-08    5.826120e-06 
+
+convergence summary
+    number of iterations   : 4
+    number of reformations : 1
+
+------- converged at time : 0.52432
+
+
+Data Record #1
+===========================================================================
+Step = 12
+Time = 0.524320256
+Data = sx
+File = C:\Users\Pedro\Documents\VS code\.venv\Febio_optimizer\element_stress_log.txt
+
+Data Record #2
+===========================================================================
+Step = 12
+Time = 0.524320256
+Data = Rx
+File = C:\Users\Pedro\Documents\VS code\.venv\Febio_optimizer\node_rx force.txt
+
+AUTO STEPPER: increasing time step, dt = 0.0882559
+
+
+===== beginning time step 13 : 0.612576 =====
+
+
+Reforming stiffness matrix: reformation #1
+
+ 1
+ Nonlinear solution status: time= 0.612576
+	stiffness updates             = 0
+	right hand side evaluations   = 2
+	stiffness matrix reformations = 1
+	step from line search         = 1.000000
+	convergence norms :     INITIAL         CURRENT         REQUIRED
+	   residual            1.770812e+02    2.425124e+00    0.000000e+00 
+	   energy              8.207684e+00    3.982541e-03    8.207684e-02 
+	   displacement        6.233769e+00    6.233769e+00    6.233769e-06 
+ 2
+ Nonlinear solution status: time= 0.612576
+	stiffness updates             = 1
+	right hand side evaluations   = 3
+	stiffness matrix reformations = 1
+	step from line search         = 1.000000
+	convergence norms :     INITIAL         CURRENT         REQUIRED
+	   residual            1.770812e+02    3.467482e-03    0.000000e+00 
+	   energy              8.207684e+00    1.487671e-04    8.207684e-02 
+	   displacement        6.233769e+00    3.414698e-05    6.230774e-06 
+ 3
+ Nonlinear solution status: time= 0.612576
+	stiffness updates             = 2
+	right hand side evaluations   = 4
+	stiffness matrix reformations = 1
+	step from line search         = 1.000000
+	convergence norms :     INITIAL         CURRENT         REQUIRED
+	   residual            1.770812e+02    3.990059e-04    0.000000e+00 
+	   energy              8.207684e+00    1.581125e-06    8.207684e-02 
+	   displacement        6.233769e+00    2.016289e-05    6.233266e-06 
+ 4
+ Nonlinear solution status: time= 0.612576
+	stiffness updates             = 3
+	right hand side evaluations   = 5
+	stiffness matrix reformations = 1
+	step from line search         = 1.000000
+	convergence norms :     INITIAL         CURRENT         REQUIRED
+	   residual            1.770812e+02    1.508177e-06    0.000000e+00 
+	   energy              8.207684e+00    1.148040e-08    8.207684e-02 
+	   displacement        6.233769e+00    4.556165e-08    6.233468e-06 
+
+convergence summary
+    number of iterations   : 4
+    number of reformations : 1
+
+------- converged at time : 0.612576
+
+
+Data Record #1
+===========================================================================
+Step = 13
+Time = 0.612576205
+Data = sx
+File = C:\Users\Pedro\Documents\VS code\.venv\Febio_optimizer\element_stress_log.txt
+
+Data Record #2
+===========================================================================
+Step = 13
+Time = 0.612576205
+Data = Rx
+File = C:\Users\Pedro\Documents\VS code\.venv\Febio_optimizer\node_rx force.txt
+
+AUTO STEPPER: increasing time step, dt = 0.0906048
+
+
+===== beginning time step 14 : 0.703181 =====
+
+
+Reforming stiffness matrix: reformation #1
+
+ 1
+ Nonlinear solution status: time= 0.703181
+	stiffness updates             = 0
+	right hand side evaluations   = 2
+	stiffness matrix reformations = 1
+	step from line search         = 1.000000
+	convergence norms :     INITIAL         CURRENT         REQUIRED
+	   residual            2.385193e+02    2.673765e+00    0.000000e+00 
+	   energy              8.698543e+00    4.206096e-03    8.698543e-02 
+	   displacement        6.569384e+00    6.569384e+00    6.569384e-06 
+ 2
+ Nonlinear solution status: time= 0.703181
+	stiffness updates             = 1
+	right hand side evaluations   = 3
+	stiffness matrix reformations = 1
+	step from line search         = 1.000000
+	convergence norms :     INITIAL         CURRENT         REQUIRED
+	   residual            2.385193e+02    4.258834e-03    0.000000e+00 
+	   energy              8.698543e+00    1.743142e-04    8.698543e-02 
+	   displacement        6.569384e+00    3.943562e-05    6.566016e-06 
+ 3
+ Nonlinear solution status: time= 0.703181
+	stiffness updates             = 2
+	right hand side evaluations   = 4
+	stiffness matrix reformations = 1
+	step from line search         = 1.000000
+	convergence norms :     INITIAL         CURRENT         REQUIRED
+	   residual            2.385193e+02    4.873154e-04    0.000000e+00 
+	   energy              8.698543e+00    1.922437e-06    8.698543e-02 
+	   displacement        6.569384e+00    2.332073e-05    6.568773e-06 
+ 4
+ Nonlinear solution status: time= 0.703181
+	stiffness updates             = 3
+	right hand side evaluations   = 5
+	stiffness matrix reformations = 1
+	step from line search         = 1.000000
+	convergence norms :     INITIAL         CURRENT         REQUIRED
+	   residual            2.385193e+02    2.026480e-06    0.000000e+00 
+	   energy              8.698543e+00    1.436573e-08    8.698543e-02 
+	   displacement        6.569384e+00    5.839371e-08    6.569012e-06 
+
+convergence summary
+    number of iterations   : 4
+    number of reformations : 1
+
+------- converged at time : 0.703181
+
+
+Data Record #1
+===========================================================================
+Step = 14
+Time = 0.703180964
+Data = sx
+File = C:\Users\Pedro\Documents\VS code\.venv\Febio_optimizer\element_stress_log.txt
+
+Data Record #2
+===========================================================================
+Step = 14
+Time = 0.703180964
+Data = Rx
+File = C:\Users\Pedro\Documents\VS code\.venv\Febio_optimizer\node_rx force.txt
+
+AUTO STEPPER: increasing time step, dt = 0.0924838
+
+
+===== beginning time step 15 : 0.795665 =====
+
+
+Reforming stiffness matrix: reformation #1
+
+ 1
+ Nonlinear solution status: time= 0.795665
+	stiffness updates             = 0
+	right hand side evaluations   = 2
+	stiffness matrix reformations = 1
+	step from line search         = 1.000000
+	convergence norms :     INITIAL         CURRENT         REQUIRED
+	   residual            3.125875e+02    2.876970e+00    0.000000e+00 
+	   energy              9.122391e+00    4.323599e-03    9.122391e-02 
+	   displacement        6.843948e+00    6.843948e+00    6.843948e-06 
+ 2
+ Nonlinear solution status: time= 0.795665
+	stiffness updates             = 1
+	right hand side evaluations   = 3
+	stiffness matrix reformations = 1
+	step from line search         = 1.000000
+	convergence norms :     INITIAL         CURRENT         REQUIRED
+	   residual            3.125875e+02    5.002962e-03    0.000000e+00 
+	   energy              9.122391e+00    1.970385e-04    9.122391e-02 
+	   displacement        6.843948e+00    4.412768e-05    6.840244e-06 
+ 3
+ Nonlinear solution status: time= 0.795665
+	stiffness updates             = 2
+	right hand side evaluations   = 4
+	stiffness matrix reformations = 1
+	step from line search         = 1.000000
+	convergence norms :     INITIAL         CURRENT         REQUIRED
+	   residual            3.125875e+02    5.685470e-04    0.000000e+00 
+	   energy              9.122391e+00    2.231388e-06    9.122391e-02 
+	   displacement        6.843948e+00    2.604365e-05    6.843230e-06 
+ 4
+ Nonlinear solution status: time= 0.795665
+	stiffness updates             = 3
+	right hand side evaluations   = 5
+	stiffness matrix reformations = 1
+	step from line search         = 1.000000
+	convergence norms :     INITIAL         CURRENT         REQUIRED
+	   residual            3.125875e+02    2.540773e-06    0.000000e+00 
+	   energy              9.122391e+00    1.697686e-08    9.122391e-02 
+	   displacement        6.843948e+00    7.079323e-08    6.843502e-06 
+
+convergence summary
+    number of iterations   : 4
+    number of reformations : 1
+
+------- converged at time : 0.795665
+
+
+Data Record #1
+===========================================================================
+Step = 15
+Time = 0.795664771
+Data = sx
+File = C:\Users\Pedro\Documents\VS code\.venv\Febio_optimizer\element_stress_log.txt
+
+Data Record #2
+===========================================================================
+Step = 15
+Time = 0.795664771
+Data = Rx
+File = C:\Users\Pedro\Documents\VS code\.venv\Febio_optimizer\node_rx force.txt
+
+AUTO STEPPER: increasing time step, dt = 0.093987
+
+
+===== beginning time step 16 : 0.889652 =====
+
+
+Reforming stiffness matrix: reformation #1
+
+ 1
+ Nonlinear solution status: time= 0.889652
+	stiffness updates             = 0
+	right hand side evaluations   = 2
+	stiffness matrix reformations = 1
+	step from line search         = 1.000000
+	convergence norms :     INITIAL         CURRENT         REQUIRED
+	   residual            3.995500e+02    3.037216e+00    0.000000e+00 
+	   energy              9.492122e+00    4.348138e-03    9.492122e-02 
+	   displacement        7.067351e+00    7.067351e+00    7.067351e-06 
+ 2
+ Nonlinear solution status: time= 0.889652
+	stiffness updates             = 1
+	right hand side evaluations   = 3
+	stiffness matrix reformations = 1
+	step from line search         = 1.000000
+	convergence norms :     INITIAL         CURRENT         REQUIRED
+	   residual            3.995500e+02    5.676711e-03    0.000000e+00 
+	   energy              9.492122e+00    2.165799e-04    9.492122e-02 
+	   displacement        7.067351e+00    4.817335e-05    7.063345e-06 
+ 3
+ Nonlinear solution status: time= 0.889652
+	stiffness updates             = 2
+	right hand side evaluations   = 4
+	stiffness matrix reformations = 1
+	step from line search         = 1.000000
+	convergence norms :     INITIAL         CURRENT         REQUIRED
+	   residual            3.995500e+02    6.403315e-04    0.000000e+00 
+	   energy              9.492122e+00    2.498067e-06    9.492122e-02 
+	   displacement        7.067351e+00    2.830419e-05    7.066528e-06 
+ 4
+ Nonlinear solution status: time= 0.889652
+	stiffness updates             = 3
+	right hand side evaluations   = 5
+	stiffness matrix reformations = 1
+	step from line search         = 1.000000
+	convergence norms :     INITIAL         CURRENT         REQUIRED
+	   residual            3.995500e+02    3.018908e-06    0.000000e+00 
+	   energy              9.492122e+00    1.920083e-08    9.492122e-02 
+	   displacement        7.067351e+00    8.221904e-08    7.066831e-06 
+
+convergence summary
+    number of iterations   : 4
+    number of reformations : 1
+
+------- converged at time : 0.889652
+
+
+Data Record #1
+===========================================================================
+Step = 16
+Time = 0.889651817
+Data = sx
+File = C:\Users\Pedro\Documents\VS code\.venv\Febio_optimizer\element_stress_log.txt
+
+Data Record #2
+===========================================================================
+Step = 16
+Time = 0.889651817
+Data = Rx
+File = C:\Users\Pedro\Documents\VS code\.venv\Febio_optimizer\node_rx force.txt
+
+AUTO STEPPER: increasing time step, dt = 0.0951896
+
+
+===== beginning time step 17 : 0.984841 =====
+
+
+Reforming stiffness matrix: reformation #1
+
+ 1
+ Nonlinear solution status: time= 0.984841
+	stiffness updates             = 0
+	right hand side evaluations   = 2
+	stiffness matrix reformations = 1
+	step from line search         = 1.000000
+	convergence norms :     INITIAL         CURRENT         REQUIRED
+	   residual            4.994590e+02    3.158375e+00    0.000000e+00 
+	   energy              9.818927e+00    4.294329e-03    9.818927e-02 
+	   displacement        7.248333e+00    7.248333e+00    7.248333e-06 
+ 2
+ Nonlinear solution status: time= 0.984841
+	stiffness updates             = 1
+	right hand side evaluations   = 3
+	stiffness matrix reformations = 1
+	step from line search         = 1.000000
+	convergence norms :     INITIAL         CURRENT         REQUIRED
+	   residual            4.994590e+02    6.267457e-03    0.000000e+00 
+	   energy              9.818927e+00    2.328667e-04    9.818927e-02 
+	   displacement        7.248333e+00    5.157335e-05    7.244057e-06 
+ 3
+ Nonlinear solution status: time= 0.984841
+	stiffness updates             = 2
+	right hand side evaluations   = 4
+	stiffness matrix reformations = 1
+	step from line search         = 1.000000
+	convergence norms :     INITIAL         CURRENT         REQUIRED
+	   residual            4.994590e+02    7.016338e-04    0.000000e+00 
+	   energy              9.818927e+00    2.717973e-06    9.818927e-02 
+	   displacement        7.248333e+00    3.011161e-05    7.247410e-06 
+ 4
+ Nonlinear solution status: time= 0.984841
+	stiffness updates             = 3
+	right hand side evaluations   = 5
+	stiffness matrix reformations = 1
+	step from line search         = 1.000000
+	convergence norms :     INITIAL         CURRENT         REQUIRED
+	   residual            4.994590e+02    3.438930e-06    0.000000e+00 
+	   energy              9.818927e+00    2.099165e-08    9.818927e-02 
+	   displacement        7.248333e+00    9.234052e-08    7.247740e-06 
+
+convergence summary
+    number of iterations   : 4
+    number of reformations : 1
+
+------- converged at time : 0.984841
+
+
+Data Record #1
+===========================================================================
+Step = 17
+Time = 0.984841453
+Data = sx
+File = C:\Users\Pedro\Documents\VS code\.venv\Febio_optimizer\element_stress_log.txt
+
+Data Record #2
+===========================================================================
+Step = 17
+Time = 0.984841453
+Data = Rx
+File = C:\Users\Pedro\Documents\VS code\.venv\Febio_optimizer\node_rx force.txt
+
+AUTO STEPPER: increasing time step, dt = 0.0961517
+
+
+===== beginning time step 18 : 1.08099 =====
+
+
+Reforming stiffness matrix: reformation #1
+
+ 1
+ Nonlinear solution status: time= 1.08099
+	stiffness updates             = 0
+	right hand side evaluations   = 2
+	stiffness matrix reformations = 1
+	step from line search         = 1.000000
+	convergence norms :     INITIAL         CURRENT         REQUIRED
+	   residual            1.521729e+01    2.003145e-03    0.000000e+00 
+	   energy              2.513297e-01    7.209104e-06    2.513297e-03 
+	   displacement        1.837860e-01    1.837860e-01    1.837860e-07 
+ 2
+ Nonlinear solution status: time= 1.08099
+	stiffness updates             = 1
+	right hand side evaluations   = 3
+	stiffness matrix reformations = 1
+	step from line search         = 1.000000
+	convergence norms :     INITIAL         CURRENT         REQUIRED
+	   residual            1.521729e+01    2.177798e-08    0.000000e+00 
+	   energy              2.513297e-01    5.515945e-09    2.513297e-03 
+	   displacement        1.837860e-01    9.931198e-09    1.837811e-07 
+
+convergence summary
+    number of iterations   : 2
+    number of reformations : 1
+
+------- converged at time : 1.08099
+
+
+Data Record #1
+===========================================================================
+Step = 18
+Time = 1.08099316
+Data = sx
+File = C:\Users\Pedro\Documents\VS code\.venv\Febio_optimizer\element_stress_log.txt
+
+Data Record #2
+===========================================================================
+Step = 18
+Time = 1.08099316
+Data = Rx
+File = C:\Users\Pedro\Documents\VS code\.venv\Febio_optimizer\node_rx force.txt
+
+AUTO STEPPER: increasing time step, dt = 0.0969214
+
+
+===== beginning time step 19 : 1.17791 =====
+
+
+Reforming stiffness matrix: reformation #1
+
+ 1
+ Nonlinear solution status: time= 1.17791
+	stiffness updates             = 0
+	right hand side evaluations   = 2
+	stiffness matrix reformations = 1
+	step from line search         = 1.000000
+	convergence norms :     INITIAL         CURRENT         REQUIRED
+	   residual            2.177798e-08    2.894043e-17    0.000000e+00 
+	   energy              1.699763e-09    5.347812e-16    1.699763e-11 
+	   displacement        5.358808e-10    5.358808e-10    5.358808e-16 
+ 2
+ Nonlinear solution status: time= 1.17791
+	stiffness updates             = 1
+	right hand side evaluations   = 3
+	stiffness matrix reformations = 1
+	step from line search         = 1.000000
+	convergence norms :     INITIAL         CURRENT         REQUIRED
+	   residual            2.177798e-08    7.644110e-22    0.000000e+00 
+	   energy              1.699763e-09    1.697349e-23    1.699763e-11 
+	   displacement        5.358808e-10    3.365569e-22    5.358804e-16 
+
+convergence summary
+    number of iterations   : 2
+    number of reformations : 1
+
+------- converged at time : 1.17791
+
+
+Data Record #1
+===========================================================================
+Step = 19
+Time = 1.17791453
+Data = sx
+File = C:\Users\Pedro\Documents\VS code\.venv\Febio_optimizer\element_stress_log.txt
+
+Data Record #2
+===========================================================================
+Step = 19
+Time = 1.17791453
+Data = Rx
+File = C:\Users\Pedro\Documents\VS code\.venv\Febio_optimizer\node_rx force.txt
+
+AUTO STEPPER: increasing time step, dt = 0.0975371
+
+
+===== beginning time step 20 : 1.27545 =====
+
+
+Reforming stiffness matrix: reformation #1
+
+ 1
+ Nonlinear solution status: time= 1.27545
+	stiffness updates             = 0
+	right hand side evaluations   = 2
+	stiffness matrix reformations = 1
+	step from line search         = 1.000000
+	convergence norms :     INITIAL         CURRENT         REQUIRED
+	   residual            7.644136e-22    6.822617e-22    0.000000e+00 
+	   energy              4.249086e-25    1.868568e-25    4.249086e-27 
+	   displacement        9.472196e-28    9.472196e-28    9.472196e-34 
+
+ *************************************************************************
+ *                               WARNING                                 *
+ * No force acting on the system.                                        *
+ *************************************************************************
+
+convergence summary
+    number of iterations   : 1
+    number of reformations : 1
+
+------- converged at time : 1.27545
+
+
+Data Record #1
+===========================================================================
+Step = 20
+Time = 1.27545162
+Data = sx
+File = C:\Users\Pedro\Documents\VS code\.venv\Febio_optimizer\element_stress_log.txt
+
+Data Record #2
+===========================================================================
+Step = 20
+Time = 1.27545162
+Data = Rx
+File = C:\Users\Pedro\Documents\VS code\.venv\Febio_optimizer\node_rx force.txt
+
+AUTO STEPPER: increasing time step, dt = 0.0980297
+
+
+===== beginning time step 21 : 1.37348 =====
+
+
+Reforming stiffness matrix: reformation #1
+
+ 1
+ Nonlinear solution status: time= 1.37348
+	stiffness updates             = 0
+	right hand side evaluations   = 2
+	stiffness matrix reformations = 1
+	step from line search         = 1.000000
+	convergence norms :     INITIAL         CURRENT         REQUIRED
+	   residual            6.822618e-22    6.321268e-22    0.000000e+00 
+	   energy              3.990014e-25    2.030886e-25    3.990014e-27 
+	   displacement        9.005813e-28    9.005813e-28    9.005813e-34 
+
+ *************************************************************************
+ *                               WARNING                                 *
+ * No force acting on the system.                                        *
+ *************************************************************************
+
+convergence summary
+    number of iterations   : 1
+    number of reformations : 1
+
+------- converged at time : 1.37348
+
+
+Data Record #1
+===========================================================================
+Step = 21
+Time = 1.3734813
+Data = sx
+File = C:\Users\Pedro\Documents\VS code\.venv\Febio_optimizer\element_stress_log.txt
+
+Data Record #2
+===========================================================================
+Step = 21
+Time = 1.3734813
+Data = Rx
+File = C:\Users\Pedro\Documents\VS code\.venv\Febio_optimizer\node_rx force.txt
+
+AUTO STEPPER: increasing time step, dt = 0.0984237
+
+
+===== beginning time step 22 : 1.47191 =====
+
+
+Reforming stiffness matrix: reformation #1
+
+ 1
+ Nonlinear solution status: time= 1.47191
+	stiffness updates             = 0
+	right hand side evaluations   = 2
+	stiffness matrix reformations = 1
+	step from line search         = 1.000000
+	convergence norms :     INITIAL         CURRENT         REQUIRED
+	   residual            6.321271e-22    6.197077e-22    0.000000e+00 
+	   energy              3.483755e-25    1.851299e-25    3.483755e-27 
+	   displacement        8.000592e-28    8.000592e-28    8.000592e-34 
+
+ *************************************************************************
+ *                               WARNING                                 *
+ * No force acting on the system.                                        *
+ *************************************************************************
+
+convergence summary
+    number of iterations   : 1
+    number of reformations : 1
+
+------- converged at time : 1.47191
+
+
+Data Record #1
+===========================================================================
+Step = 22
+Time = 1.47190504
+Data = sx
+File = C:\Users\Pedro\Documents\VS code\.venv\Febio_optimizer\element_stress_log.txt
+
+Data Record #2
+===========================================================================
+Step = 22
+Time = 1.47190504
+Data = Rx
+File = C:\Users\Pedro\Documents\VS code\.venv\Febio_optimizer\node_rx force.txt
+
+AUTO STEPPER: increasing time step, dt = 0.098739
+
+MUST POINT CONTROLLER: adjusting time step. dt = 0.028095
+
+
+===== beginning time step 23 : 1.5 =====
+
+
+Reforming stiffness matrix: reformation #1
+
+ 1
+ Nonlinear solution status: time= 1.5
+	stiffness updates             = 0
+	right hand side evaluations   = 2
+	stiffness matrix reformations = 1
+	step from line search         = 1.000000
+	convergence norms :     INITIAL         CURRENT         REQUIRED
+	   residual            6.197079e-22    6.061819e-22    0.000000e+00 
+	   energy              3.586860e-25    2.017179e-25    3.586860e-27 
+	   displacement        8.498165e-28    8.498165e-28    8.498165e-34 
+
+ *************************************************************************
+ *                               WARNING                                 *
+ * No force acting on the system.                                        *
+ *************************************************************************
+
+convergence summary
+    number of iterations   : 1
+    number of reformations : 1
+
+------- converged at time : 1.5
+
+
+Data Record #1
+===========================================================================
+Step = 23
+Time = 1.5
+Data = sx
+File = C:\Users\Pedro\Documents\VS code\.venv\Febio_optimizer\element_stress_log.txt
+
+Data Record #2
+===========================================================================
+Step = 23
+Time = 1.5
+Data = Rx
+File = C:\Users\Pedro\Documents\VS code\.venv\Febio_optimizer\node_rx force.txt
+
+
+ N O N L I N E A R   I T E R A T I O N   I N F O R M A T I O N
+
+	Number of time steps completed .................... : 23
+
+	Total number of equilibrium iterations ............ : 62
+
+	Average number of equilibrium iterations .......... : 2.69565
+
+	Total number of right hand evaluations ............ : 85
+
+	Total number of stiffness reformations ............ : 23
+
+
+ L I N E A R   S O L V E R   S T A T S
+
+	Total calls to linear solver ........ : 62
+
+	Avg iterations per solve ............ : 1
+
+	Time in linear solver: 0:00:01
+
+ Peak memory  : 50.4 MB
+
+ Elapsed time : 0:00:01
+
+ T I M I N G   I N F O R M A T I O N
+
+	Input time ...................... : 0:00:00 (0.0052145 sec)
+
+	Initialization time ............. : 0:00:00 (0.0018928 sec)
+
+	Solve time ...................... : 0:00:01 (1.12389 sec)
+
+	   IO-time (plot, dmp, data) .... : 0:00:00 (0.122008 sec)
+
+	   reforming stiffness .......... : 0:00:00 (0.0021048 sec)
+
+	   evaluating stiffness ......... : 0:00:00 (0.0281469 sec)
+
+	   evaluating residual .......... : 0:00:00 (0.0134038 sec)
+
+	   model update ................. : 0:00:00 (0.0447116 sec)
+
+	   QN updates ................... : 0:00:00 (0.0012701 sec)
+
+	   time in linear solver ........ : 0:00:01 (0.856779 sec)
+
+	Total elapsed time .............. : 0:00:01 (1.13722 sec)
+
+
+ N O R M A L   T E R M I N A T I O N
+
