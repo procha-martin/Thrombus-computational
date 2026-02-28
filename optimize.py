@@ -7,13 +7,14 @@ def objective_log_c1(log10_c1):
 
 res = minimize_scalar(
     objective_log_c1,
-    bounds=(-10, 0),  # c1 from 1e-10 to 1
+    bounds=(-4, 0),  # c1 from 1e-10 to 1
     method="bounded",
-    options={"xatol": 1e-3, "maxiter": 40}
+    options={"xatol": 1e-2, "maxiter": 30}
 )
-print("best c1:", 10**res.x, "best err:", res.fun)
+# print("best c1:", 10**res.x, "best err:", res.fun)
+# print("Optimization result:")
+# print(res)
 
-
-print("Optimization result:")
-print(res)
-
+print("best log10(c1):", res.x)
+print("best c1:", 10**res.x)
+print("best err:", res.fun)

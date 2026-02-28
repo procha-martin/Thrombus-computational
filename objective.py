@@ -37,7 +37,7 @@ TOP_FACE_NODE_IDS = extract_surface_node_ids(TEMPLATE_FEB, "PrescribedDisplaceme
 
 # ---------------- Logging ----------------
 LOG_CSV = BASE_DIR / "run_log.csv"
-LOG_HEADER = ["c1", "percent_error"]
+LOG_HEADER = ["c1", "m1", "error_percent"]
 
 if not LOG_CSV.exists():
     with LOG_CSV.open("w", newline="") as f:
@@ -81,6 +81,7 @@ def objective_c1(c1):
                 feb_file,
                 workdir=run_dir,
                 timeout=FEBIO_TIMEOUT,
+                threads=4
             )
         except subprocess.TimeoutExpired:
             elapsed = time.time() - start_time
@@ -166,3 +167,79 @@ def objective_c1(c1):
     finally:
         # 🔥 Cleanup everything
         shutil.rmtree(run_dir, ignore_errors=True)
+
+def objective_coeffs(coeffs: dict, *, timeout=120, threads=2, debug=False):
+    run_id = uuid.uuid4().hex[:8]
+    run_dir = Path(tempfile.mkdtemp(prefix=f"febio_{run_id}_"))
+
+    try:
+        feb_file = run_dir / "model.feb"
+        reaction_file = run_dir / "node_rx force.txt"
+        model_log = run_dir / "model.log"
+
+        write_coeffs(
+            template_feb=TEMPLATE_FEB,
+            output_feb=feb_file,
+            coeffs={k: float(v) for k, v in coeffs.items()},
+        )
+
+        update_log_data_file(
+            feb_file,
+            tag="node_data",
+            data_name="Rx",
+            new_file=reaction_file,
+        )
+
+        if debug:
+            print("\n[debug] run_dir:", run_dir)
+            print("[debug] coeffs:", coeffs)
+
+        try:
+            result = run_febio(feb_file, workdir=run_dir, timeout=timeout, threads=6)
+            t0 = time.time()
+        except subprocess.TimeoutExpired:
+            if debug:
+                print("[debug] TIMEOUT")
+            return 1e9
+        except Exception as e:
+            if debug:
+                print("[debug] Exception launching/running FEBio:", repr(e))
+            return 1e9
+        except subprocess.TimeoutExpired:
+            if debug:
+                print(f"[debug] TIMEOUT after {time.time() - t0:.1f}s")
+            return 1e9
+
+        if debug:
+            print("[debug] returncode:", result.returncode)
+            print("[debug] files:", [p.name for p in run_dir.glob("*")])
+            print("reaction_file exists:", reaction_file.exists())
+
+        if result.returncode != 0:
+            if debug and model_log.exists():
+                tail = model_log.read_text(errors="ignore").splitlines()[-60:]
+                print("[debug] model.log tail:\n" + "\n".join(tail))
+            return 1e9
+            
+
+        if not reaction_file.exists():
+            if debug:
+                print("[debug] reaction file missing:", reaction_file)
+                if model_log.exists():
+                    tail = model_log.read_text(errors="ignore").splitlines()[-60:]
+                    print("[debug] model.log tail:\n" + "\n".join(tail))
+            return 1e9
+
+        sim = parse_febio_log_by_step(reaction_file, ids_keep=TOP_FACE_NODE_IDS, agg="sum")
+        sim_use = sim[sim["Step"] > 0].reset_index(drop=True)
+        exp_use = resample_to_n_points(EXP_DATA.rename(columns={"X": "Step"}), n=len(sim_use))
+
+        err = 100.0 * nrmse(sim_use["Value"], exp_use["Value"])
+        return float(err)
+
+    finally:
+        # Keep failed folders if debug=True so you can inspect them
+        if debug:
+            print("[debug] keeping run folder:", run_dir)
+        else:
+            shutil.rmtree(run_dir, ignore_errors=True)

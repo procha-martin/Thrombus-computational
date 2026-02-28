@@ -16,7 +16,7 @@ def write_coeffs(
     tree = ET.parse(output_feb)
     root = tree.getroot()
 
-    material = root.find(f".//material[@id='{material_id}']")
+    material = root.find(f".//*[@id='{material_id}'][@type]")
     if material is None:
         raise KeyError(f"Material id={material_id} not found")
 
